@@ -1,6 +1,8 @@
 const { Client } = require('discord.js-selfbot-v13');
+require('dotenv').config();
 const client = new Client();
-const TARGET_CHANNEL_ID = '';
+const TARGET_CHANNEL_ID = process.env.chnlID;
+const TOKEN = process.env.token;
 
 client.on('ready', async () => {
   console.log(`${client.user.username} is ready!`);
@@ -17,4 +19,4 @@ client.on('guildMemberAdd', async member => {
   -------_-------`);
 })
 
-client.login('');
+client.login(TOKEN);
