@@ -5,6 +5,7 @@ const TARGET_CHANNEL_ID = process.env.chnlID;
 const TOKEN = process.env.token;
 
 client.on('ready', async () => {
+  const channel = client.channels.cache.get(TARGET_CHANNEL_ID);
   await channel.send(`${client.user.username} is ready!`);
 })
 
